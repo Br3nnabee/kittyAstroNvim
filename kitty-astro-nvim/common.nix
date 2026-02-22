@@ -34,6 +34,9 @@ in
       gcc
       go
       dotnet-sdk
+      lua-language-server
+      sqlfluff
+      nixfmt-rfc-style
     ] ++ [
       config.kittyAstroNvim.pythonPackage
       config.kittyAstroNvim.nodePackage
