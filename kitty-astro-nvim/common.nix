@@ -29,9 +29,11 @@ in
       ruff
       nixd
       deadnix
-      rustup # Must run `rustup default stable`
+      rustup
       gnumake
       gcc
+      go
+      dotnet-sdk
     ] ++ [
       config.kittyAstroNvim.pythonPackage
       config.kittyAstroNvim.nodePackage
