@@ -46,9 +46,9 @@ A very minimal installation in a typical nix flake would look as follows:
 {
   kittyAstroNvim = {
     username = "br3nnabee";
-    nerdfont = "Hack";
+    nerdfont = pkgs.hack-font;
     nodePackage = pkgs.nodejs_25;
-    pythonPackage = pkgs.python314Full;
+    pythonPackage = pkgs.python314;
   };
 
   # Everything else required to configure your machine...

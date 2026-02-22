@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   options.kittyAstroNvim = with lib; {
     username = mkOption {

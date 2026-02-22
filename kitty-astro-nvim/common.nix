@@ -30,6 +30,8 @@ in
       nixd
       deadnix
       rustup # Must run `rustup default stable`
+      gnumake
+      gcc
     ] ++ [
       config.kittyAstroNvim.pythonPackage
       config.kittyAstroNvim.nodePackage
