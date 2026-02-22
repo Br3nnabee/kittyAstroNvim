@@ -17,11 +17,11 @@
     {
       nixosModules = rec {
         astroNvim = import ./kitty-astro-nvim/nixos.nix;
-        defualt = astroNvim;
+        default = astroNvim;
       };
       darwinModules = rec {
         astroNvim = import ./kitty-astro-nvim/macos.nix;
-        defualt = astroNvim;
+        default = astroNvim;
       };
     };
 }
