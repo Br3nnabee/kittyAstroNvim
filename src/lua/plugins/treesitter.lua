@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
   opts = function(_, opts)
     opts.highlight = opts.highlight or {}
     opts.highlight.additional_vim_regex_highlighting =
