@@ -31,11 +31,11 @@ in
       deadnix
       rustup # Must run `rustup default stable`
     ] ++ [
-      config.sumAstroNvim.pythonPackage
-      config.sumAstroNvim.nodePackage
+      config.kittyAstroNvim.pythonPackage
+      config.kittyAstroNvim.nodePackage
       refresh
     ];
-    home-manager.users.${config.sumAstroNvim.username}.xdg.configFile = {
+    home-manager.users.${config.kittyAstroNvim.username}.xdg.configFile = {
       "nvim/lua" = {
         source = ../src/lua;
         recursive = true;

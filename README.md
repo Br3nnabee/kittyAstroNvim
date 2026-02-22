@@ -1,4 +1,4 @@
-# Sum Rock's AstroNvim Implementation
+# Br3nnabee's AstroNvim Implementation
 
 This is an implementation of the [AstroNvim](https://astronvim.com/)
 configuration/plugin distribution for Neovim using Nix flakes. The flake contains both a
@@ -19,19 +19,19 @@ A very minimal installation in a typical nix flake would look as follows:
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-23.11";
     };
-    sum-astro-nvim = {
-      url = "github:sum-rock/SumAstroNvim/master";
+    kitty-astro-nvim = {
+      url = "github:br3nnabee/kittyAstroNvim/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, sum-astro-nvim }:
+  outputs = { self, nixpkgs, kitty-astro-nvim }:
   {
     nixosConfigurations = {
       "my-hostname" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          sum-astro-nvim.nixosModules.astroNvim
+          kitty-astro-nvim.nixosModules.astroNvim
         ];
       };
     };
@@ -44,11 +44,11 @@ A very minimal installation in a typical nix flake would look as follows:
 ```nix
 { config, pkgs, ...}:
 {
-  sumAstroNvim = {
-    username = "sumrock";
-    nerdfont = "FiraCode";
-    nodePackage = pkgs.nodejs_24;
-    pythonPackage = pkgs.python311Full;
+  kittyAstroNvim = {
+    username = "br3nnabee";
+    nerdfont = "Hack";
+    nodePackage = pkgs.nodejs_25;
+    pythonPackage = pkgs.python314Full;
   };
 
   # Everything else required to configure your machine...
