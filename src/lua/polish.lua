@@ -5,9 +5,10 @@
 vim.cmd ":TransparentEnable"
 
 -- Zellij Integration: Hide UI on enter, restore on leave
+-- `override-layout` currently only in repo, no release yet
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    os.execute("zellij action switch-layout plain")
+    os.execute("zellij action override-layout --retain-existing-terminal-panes plain")
     os.execute("zellij action switch-mode locked")
   end,
 })
@@ -15,6 +16,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.api.nvim_create_autocmd("VimLeave", {
   callback = function()
     os.execute("zellij action switch-mode normal")
-    os.execute("zellij action switch-layout pills")
+    os.execute("zellij action override-layout --retain-existing-terminal-panes pills")
   end,
 })
