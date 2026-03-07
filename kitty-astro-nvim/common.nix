@@ -43,7 +43,7 @@ in
         dotnet-sdk
         lua-language-server
         sqlfluff
-        nixfmt-rfc-style
+        nixfmt
         marksman
       ]
       ++ [
