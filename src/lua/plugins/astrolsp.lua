@@ -7,7 +7,7 @@ return {
   opts = {
     features = {
       autoformat = true,
-      codelens = true,
+      codelens = false, -- Disabled per AstroNvim v6.0.2 defaults due to Neovim 0.11 bug
       inlay_hints = false,
       semantic_tokens = true,
     },
@@ -23,30 +23,8 @@ return {
         root_dir = require("lspconfig/util").root_pattern "pyproject.toml",
       },
     },
-    autocmds = {
-      lsp_document_highlight = {
-        -- Optional condition to create/delete auto command group
-        -- can either be a string of a client capability or a function of `fun(client, bufnr): boolean`
-        -- condition will be resolved for each client on each execution and if it ever fails for all clients,
-        -- the auto commands will be deleted for that buffer
-        cond = "textDocument/documentHighlight",
-        -- cond = function(client, bufnr) return client.name == "lua_ls" end,
-        -- list of auto commands to set
-        {
-          -- events to trigger
-          event = { "CursorHold", "CursorHoldI" },
-          -- the rest of the autocmd options (:h nvim_create_autocmd)
-          desc = "Document Highlighting",
-          callback = function() vim.lsp.buf.document_highlight() end,
-        },
-        {
-          event = { "CursorMoved", "CursorMovedI", "BufLeave" },
-          desc = "Document Highlighting Clear",
-          callback = function() vim.lsp.buf.clear_references() end,
-        },
-      },
-    },
-    -- mappings to be set up on attaching of a language server
+    -- Autocmds for document highlighting removed! 
+    -- AstroNvim v6 now natively handles this via snacks.words, and custom autocmds here will cause flickering/conflicts.
     mappings = {
       n = {
         gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },

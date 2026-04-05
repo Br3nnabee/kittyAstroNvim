@@ -9,7 +9,7 @@ return {
     features = {
       large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = false,
-      cmp = true,
+      cmp = false,
       diagnostics_mode = 3,
       highlighturl = true,
       notifications = true,

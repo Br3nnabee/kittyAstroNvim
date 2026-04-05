@@ -6,6 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.completion.blink-cmp" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },

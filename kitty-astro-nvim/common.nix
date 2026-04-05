@@ -28,8 +28,10 @@ in
         # Essential
         ripgrep
         lazygit
+        unzip
         gdu
         bottom
+        tree-sitter
         # LSP dependencies
         stylua
         selene
